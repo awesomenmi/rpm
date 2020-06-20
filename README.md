@@ -18,7 +18,7 @@ yum-builddep /root/rpmbuild/SPECS/nginx.spec -y
 wget https://www.openssl.org/source/latest.tar.gz
 tar -xvf latest.tar.gz --directory /usr/lib
 ```
-5. Добавим в spec-файл nginx-a опцию, указывающую расположение библиотек OpenSSL
+5. Добавим в spec-файл nginx-a опцию, указывающую расположение библиотек OpenSSL:
 ```
 sed -i 's|--with-debug|--with-openssl=/usr/lib/openssl-1.1.1g|' /root/rpmbuild/SPECS/nginx.spec
 ```
