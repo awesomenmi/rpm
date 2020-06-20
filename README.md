@@ -1,11 +1,5 @@
 # Управление пакетами. Дистрибьюция софта 
-```
-vagrant up
-vagrant ssh
-yum repolist
-yum provides nginx
-```
-____
+## Выполненные шаги
 1. Установим следующие утилиты: 
 ``` 
 yum install -y redhat-lsb-core wget rpmdevtools rpm-build createrepo yum-utils gcc
@@ -53,4 +47,57 @@ baseurl=http://localhost/repo
 gpgcheck=0
 enabled=1
 EOF
+```
+## Схема работы стенда
+
+1. Запуск стенда:
+```
+vagrant up
+vagrant ssh
+```
+2. Вывод списка подключенных репозиториев:
+```
+yum repolist
+```
+
+```
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.reconn.ru
+ * extras: mirror.reconn.ru
+ * updates: mirror.reconn.ru
+base                                                                     | 3.6 kB  00:00:00     
+custom                                                                   | 2.9 kB  00:00:00     
+extras                                                                   | 2.9 kB  00:00:00     
+updates                                                                  | 2.9 kB  00:00:00     
+(1/2): custom/primary_db                                                 | 2.8 kB  00:00:00     
+(2/2): updates/7/x86_64/primary_db                                       | 2.1 MB  00:00:00     
+repo id                                     repo name                                     status
+base/7/x86_64                               CentOS-7 - Base                               10,070
+custom                                      custom-repo                                        1
+extras/7/x86_64                             CentOS-7 - Extras                                397
+updates/7/x86_64                            CentOS-7 - Updates                               760
+repolist: 11,228
+```
+3. Поиск пакета, содержащий nginx
+```
+yum provides nginx
+```
+```
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.reconn.ru
+ * extras: mirror.reconn.ru
+ * updates: mirror.reconn.ru
+1:nginx-1.18.0-1.el7.ngx.x86_64 : High performance web server
+Repo        : custom
+
+
+
+1:nginx-1.18.0-1.el7.ngx.x86_64 : High performance web server
+Repo        : installed
+
+
+
+
 ```
