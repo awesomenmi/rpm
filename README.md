@@ -79,7 +79,7 @@ extras/7/x86_64                             CentOS-7 - Extras                   
 updates/7/x86_64                            CentOS-7 - Updates                               760
 repolist: 11,228
 ```
-3. Поиск пакета, содержащий nginx
+3. Определим, к какому пакету относится nginx
 ```
 yum provides nginx
 ```
