@@ -5,7 +5,7 @@ vagrant ssh
 yum repolist
 yum provides nginx
 ```
-
+____
 1. Установим следующие утилиты: 
 ``` 
 yum install -y redhat-lsb-core wget rpmdevtools rpm-build createrepo yum-utils gcc
